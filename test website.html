@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Basic Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #f4f6f8;
+        }
+        header {
+            background: #22316c;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        nav {
+            background: #132042;
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            padding: 10px 0;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        main {
+            padding: 30px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        section {
+            background: white;
+            margin-bottom: 24px;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px #0001;
+            padding: 20px;
+        }
+        h1, h2 {
+            color: #22316c;
+        }
+        footer {
+            background: #132042;
+            color: white;
+            text-align: center;
+            padding: 14px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        @media (max-width: 600px) {
+            nav {
+                flex-direction: column;
+                gap: 10px;
+            }
+            main {
+                padding: 12px 4px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>My Basic Website</h1>
+        <p>Welcome to my very first structured website!</p>
+        <p><em>This is Ashik's first website practice.</em></p>
+    </header>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#hobbies">Hobbies</a>
+        <a href="#contact">Contact</a>
+    </nav>
+    <main>
+        <section id="home">
+            <h2>Home</h2>
+            <p>This is the homepage of my website. Here you can learn about me and how to get in touch!</p>
+        </section>
+        <section id="about">
+            <h2>About</h2>
+            <p>Hello! I’m Ashik. I’m learning how to build websites from scratch. This is a simple website made as my first project. I’m excited to keep learning and improve my skills!</p>
+        </section>
+        <section id="projects">
+            <h2>Projects</h2>
+            <ul>
+                <li><strong>Personal Portfolio:</strong> My first personal website to showcase my journey.</li>
+                <li><strong>Weather App:</strong> A simple app to check the weather in any city.</li>
+            </ul>
+        </section>
+        <section id="skills">
+            <h2>Skills</h2>
+            <ul>
+                <li>HTML & CSS (Beginner)</li>
+                <li>Basic Python</li>
+                <li>Problem Solving</li>
+            </ul>
+        </section>
+        <section id="hobbies">
+            <h2>Hobbies</h2>
+            <p>I enjoy reading tech blogs, cycling, and exploring new programming languages.</p>
+        </section>
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>You can reach me by email at: <a href="mailto:ashik.finestfashoin@gmail.com">ashik.finestfashoin@gmail.com</a></p>
+        </section>
+    </main>
+    <footer>
+        &copy; 2025 Ashik's Website. All rights reserved.
+    </footer>
+</body>
+</html>
+
