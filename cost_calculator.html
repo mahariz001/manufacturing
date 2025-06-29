@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Production Cost Calculator</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin:0; background:#f4f6f8; }
+        .wrapper { max-width:700px; margin:40px auto; background:#fff; padding:30px; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.1); }
+        h1 { color:#22316c; }
+        label { display:block; margin-top:16px; }
+        input[type="text"], input[type="number"], input[type="date"] {
+            width:100%; padding:8px; margin-top:4px; border:1px solid #ccc; border-radius:4px; box-sizing:border-box; }
+        button { margin-top:20px; padding:10px 20px; background:#22316c; color:#fff; border:none; border-radius:4px; cursor:pointer; }
+        .result { background:#e6f7e6; padding:16px; border-radius:6px; margin-top:20px; display:none; }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <h1>Production Cost Calculator</h1>
+        <form id="costForm">
+            <label>Date
+                <input type="date" id="date" required>
+            </label>
+            <label>Product Name
+                <input type="text" id="product" required>
+            </label>
+            <label>Units Produced
+                <input type="number" id="units" min="1" required>
+            </label>
+            <label>Material Cost per Unit ($)
+                <input type="number" id="material" min="0" step="0.01" required>
+            </label>
+            <label>Hours Worked
+                <input type="number" id="hours" min="0" step="0.01" required>
+            </label>
+            <label>Labor Rate per Hour ($)
+                <input type="number" id="labor" min="0" step="0.01" required>
+            </label>
+            <label>Additional Overhead Cost ($)
+                <input type="number" id="overhead" min="0" step="0.01" value="0">
+            </label>
+            <button type="submit">Calculate</button>
+        </form>
+        <div class="result" id="result">
+            <h2 id="resProduct"></h2>
+            <p><strong>Date:</strong> <span id="resDate"></span></p>
+            <p><strong>Total Material Cost:</strong> $<span id="resMatCost"></span></p>
+            <p><strong>Total Labor Cost:</strong> $<span id="resLaborCost"></span></p>
+            <p><strong>Overhead:</strong> $<span id="resOverhead"></span></p>
+            <p><strong>Total Production Cost:</strong> $<span id="resTotal"></span></p>
+            <p><strong>Cost per Unit:</strong> $<span id="resPerUnit"></span></p>
+        </div>
+    </div>
+    <script>
+        document.getElementById('costForm').onsubmit = function(e){
+            e.preventDefault();
+            var date = document.getElementById('date').value;
+            var product = document.getElementById('product').value;
+            var units = parseFloat(document.getElementById('units').value);
+            var matPerUnit = parseFloat(document.getElementById('material').value);
+            var hours = parseFloat(document.getElementById('hours').value);
+            var laborRate = parseFloat(document.getElementById('labor').value);
+            var overhead = parseFloat(document.getElementById('overhead').value);
+
+            var matCost = matPerUnit * units;
+            var laborCost = laborRate * hours;
+            var totalCost = matCost + laborCost + overhead;
+            var perUnit = totalCost / units;
+
+            document.getElementById('resProduct').textContent = product + ' Production Results';
+            document.getElementById('resDate').textContent = date;
+            document.getElementById('resMatCost').textContent = matCost.toFixed(2);
+            document.getElementById('resLaborCost').textContent = laborCost.toFixed(2);
+            document.getElementById('resOverhead').textContent = overhead.toFixed(2);
+            document.getElementById('resTotal').textContent = totalCost.toFixed(2);
+            document.getElementById('resPerUnit').textContent = perUnit.toFixed(2);
+            document.getElementById('result').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
