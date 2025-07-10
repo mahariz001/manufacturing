@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <!-- Google Fonts: Poppins & Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- AOS Animate On Scroll CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"/>
+    <!-- FontAwesome for social icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKB4Imkb9h6Q5l9OQ5l9OQ5l9OQ5l9OQ5l9OQ5l9OQ5l9OQ5l9OQ5l9OQ5l9OQ5l9OQ5l9OQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="hamburger" aria-label="Open navigation menu" tabindex="0">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#resume">Resume</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="home" data-aos="fade-up">
+            <div class="hero">
+                <div class="profile-img">
+                    <!-- Replace src with your image in assets/ -->
+                    <img src="assets/profile-placeholder.png" alt="Profile photo" />
+                </div>
+                <div class="home-intro">
+                    <h1>Ashik Rahman</h1>
+                    <p class="tagline">Data Analyst | Turning messy data into business gold</p>
+                    <p>
+                        I am a passionate data analyst with a knack for uncovering actionable insights from complex datasets. With experience in Python, SQL, and visualization tools, I help organizations make data-driven decisions. My background spans finance, retail, and tech, where I’ve delivered impactful dashboards and automated reporting solutions. I thrive on solving business problems and communicating results clearly to stakeholders.
+                    </p>
+                    <div class="cta-buttons">
+                        <a href="#projects" class="btn primary">View Projects</a>
+                        <a href="assets/ashik_resume.pdf" class="btn secondary" target="_blank" rel="noopener">Download CV</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="projects" data-aos="fade-up">
+            <h2>Projects</h2>
+            <div class="projects-filter">
+                <label for="techSelect">Filter by technology:</label>
+                <select id="techSelect" class="select-box">
+                    <option value="all">All</option>
+                </select>
+            </div>
+            <div id="projects-grid" class="projects-grid"></div>
+        </section>
+        <section id="resume" data-aos="fade-up">
+            <h2>Resume</h2>
+            <div class="pdf-wrapper">
+              <iframe src="assets/ashik_resume.pdf" title="Ashik Resume" loading="lazy"></iframe>
+            </div>
+            <ul style="margin-top:1.5rem; margin-bottom:0.5rem; list-style:none; padding:0;">
+                <li>
+                    <details>
+                        <summary><strong>Education</strong></summary>
+                        <ul>
+                            <li>B.Sc. in Computer Science, University of Dhaka (2017-2021)</li>
+                            <li>Data Analytics Certification, Coursera (2022)</li>
+                        </ul>
+                    </details>
+                </li>
+                <li>
+                    <details>
+                        <summary><strong>Work Experience</strong></summary>
+                        <ul>
+                            <li>Data Analyst, ABC Tech Solutions (2023–Present)</li>
+                            <li>Business Intelligence Intern, RetailX (2021–2022)</li>
+                        </ul>
+                    </details>
+                </li>
+                <li>
+                    <details>
+                        <summary><strong>Key Skills</strong></summary>
+                        <ul>
+                            <li>Python, SQL, Power BI, Tableau</li>
+                            <li>Data Visualization & Dashboarding</li>
+                            <li>Statistical Analysis & Forecasting</li>
+                            <li>Business Communication</li>
+                        </ul>
+                    </details>
+                </li>
+            </ul>
+            <p style="margin-top:1rem;"><a href="assets/ashik_resume.pdf" target="_blank">Download my résumé (PDF)</a></p>
+        </section>
+        <section id="contact" data-aos="fade-up">
+            <h2>Contact</h2>
+            <form id="contact-form" autocomplete="off">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required />
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required />
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn primary">Send Message</button>
+            </form>
+            <div id="toast-success">Your message was sent successfully!</div>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-content">
+            <span>© 2025 Ashikur Rahman</span>
+            <span class="footer-links">
+                <a href="https://www.linkedin.com/in/ashikurrahman" target="_blank" aria-label="LinkedIn" rel="noopener"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/ashik" target="_blank" aria-label="GitHub" rel="noopener"><i class="fab fa-github"></i></a>
+            </span>
+        </div>
+    </footer>
+    <!-- AOS Animate On Scroll JS -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="script.js"></script>
+    <script>AOS.init({ duration:600, once:true });</script>
+</body>
+</html>
